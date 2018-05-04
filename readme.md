@@ -1,7 +1,16 @@
 # A Clone of Bit.ly
 
-This is a simple project that perform url shortening service, like Bit.ly. The backend is built by Lumen PHP Framework. There is a simple frontend that let user input the url they want to shorten. The shortened url will be shown immediately.
+This is a simple project that perform url shortening service, like Bit.ly. The backend is built by Lumen PHP Framework. There is a simple frontend that let user input the url they want to shorten. The shortened url will be shown immediately. When the frontend received the required url, it will do a ajax call to the Lumen API endpoint to perform shorten link request. For each request, the system will check whether the url has been shortened before or not. If yes, the shorten url will be return from cache (database). If it is a new url, the system will randomly assign a 8-digit id and cache it to the database for future usage.
 
+Lumen is used in this system simply because of the framework boost the development process.
+
+Assumption:
+1. Every valid address user typed is assumed to be existing.
+
+Limitation
+1. The database can only store certain amount of urls. It is because the upper bound of 8-digit random number has a limit.
+2. Same address with "www" difference will have two different shorten url.
+3. Simple checking for url is implemented. There maybe some kinds of string that satisfy with the requirement maybe stored into the database. 
 ## Getting Started
 
 These instructions will get you implementing the system on Amazon Web Service.
@@ -76,7 +85,7 @@ Perform migration by running:
 php artisan migrate
 ```
 ## Note
-If the id generated is not 8 digit, please perform:
+If the id generated is not 8 digit, please copy hashids.php into the following directory:
 
 ```
 mv hashids.php /var/www/html/api-bitly/vendor/vinkla/hashids/config
