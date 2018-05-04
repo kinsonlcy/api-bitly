@@ -1,6 +1,6 @@
 # A Clone of Bit.ly
 
-This is a simple project that perform url shortening service, like Bit.ly. The backend is built by Lumen PHP Framework. There is a simple frontend that let user input the url they want to shorten. The shortened url will be shown immediatly.
+This is a simple project that perform url shortening service, like Bit.ly. The backend is built by Lumen PHP Framework. There is a simple frontend that let user input the url they want to shorten. The shortened url will be shown immediately.
 
 ## Getting Started
 
@@ -75,7 +75,12 @@ Perform migration by running:
 ```
 php artisan migrate
 ```
+## Note
+If the id generated is not 8 digit, please perform:
 
+```
+mv hashids.php /var/www/html/api-bitly/vendor/vinkla/hashids/config
+```
 
 ## Built With
 
