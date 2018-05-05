@@ -10,7 +10,10 @@ Assumption:
 Limitation
 1. The database can only store certain amount of urls. It is because the upper bound of 8-digit random number has a limit.
 2. Same address with "www" difference will have two different shorten url.
-3. Simple checking for url is implemented. There maybe some kinds of string that satisfy with the requirement maybe stored into the database. 
+3. Simple checking for url is implemented. There maybe some kinds of string that satisfy with the requirement maybe stored into the database.
+
+Demo: http://52.199.62.135/bitly/
+
 ## Getting Started
 
 These instructions will get you implementing the system on Amazon Web Service.
