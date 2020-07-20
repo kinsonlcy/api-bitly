@@ -24,7 +24,7 @@ These instructions will get you implementing the system on Amazon Web Service.
 3. Get the auto deployment script from here:
 
 ```
-https://github.com/kinsonleung1996/deploy-lumen
+https://github.com/kinsonlcy/deploy-lumen
 ```
 
 ### Installing
